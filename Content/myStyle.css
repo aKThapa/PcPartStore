@@ -1,0 +1,287 @@
+﻿body {
+    font-family: 'Kumar One', cursive;
+    background-color: #1b2b59;
+    color: #345fb4;
+    margin-top: 30px;
+}
+
+.navbar {
+    /*background-color: #060f49;*/
+    background-color: #1f3369;
+    border: 1px solid black;
+    position: fixed;
+    width: 80%;
+    margin: auto;
+}
+
+.brandName {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.brandName-left {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.customUL li {
+    display: inline;
+    list-style-type: none;
+}
+
+.margin-top {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+    .navbar-inverse .navbar-brand:hover {
+        color: #345fb4;
+    }
+
+
+
+.table th {
+    color: white;
+}
+
+
+li {
+    margin: 4px;
+}
+
+ul li ul.dropdown {
+    min-width: 100%;
+    display: none;
+    position: absolute;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+
+.whiteText {
+    color: white;
+}
+
+
+
+
+.btn-primary {
+    /*background-color: #22296b;*/
+    background-color: #1a375d;
+}
+
+    .btn-primary:hover {
+        background-color: black;
+    }
+
+
+.border {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.btn-default {
+    margin-right: 5px;
+}
+
+
+.btn-danger {
+    background-color: #1b2b59;
+    border-color: #103782;
+}
+
+    .btn-danger:hover {
+        background-color: #103782;
+        border-color: #103782;
+    }
+
+
+
+.btn-danger-amd {
+    background-color: #c51121;
+    border-color: #fff;
+}
+
+    .btn-danger-amd:hover {
+        background-color: #b31426;
+        border-color: #103782;
+    }
+
+
+
+
+/*Layout for NVIDIA page*/
+.nvidiaLayout {
+    background-color: #062c0c;
+    color: #fff;
+}
+
+    .nvidiaLayout .btn-primary {
+        background-color: #073d25;
+    }
+
+        .nvidiaLayout .btn-primary:hover {
+            background-color: black;
+        }
+
+    .nvidiaLayout .navbar {
+        background-color: #0d3d1a;
+    }
+
+    .nvidiaLayout .navbar-inverse .navbar-brand {
+        color: white;
+    }
+
+        .nvidiaLayout .navbar-inverse .navbar-brand:hover {
+            color: #b3a8a8;
+        }
+
+
+
+
+
+
+
+
+/*Layout for RAM page*/
+.memory {
+    background-color: #36040A;
+    color: #fff;
+}
+
+    .memory .btn-primary {
+        background-color: #460707;
+    }
+
+        .memory .btn-primary:hover {
+            background-color: black;
+        }
+
+    .memory .navbar {
+        background-color: #3f090a;
+    }
+
+    .memory .navbar-inverse .navbar-brand:hover {
+        color: #b3a8a8;
+    }
+
+
+
+
+
+
+/*Layout for AMD's cpu page*/
+.amd {
+    background-color: #a60a18;
+    color: #fff;
+}
+
+    .amd .btn-primary {
+        background-color: #ae1212;
+    }
+
+        .amd .btn-primary:hover {
+            background-color: black;
+        }
+
+    .amd .navbar {
+        background-color: #a8070a;
+    }
+
+    .amd .navbar-inverse .navbar-brand {
+        color: white;
+    }
+
+        .amd .navbar-inverse .navbar-brand:hover {
+            color: #b3a8a8;
+        }
+
+
+
+
+
+
+/*Layout for Power page*/
+.power {
+    background-color: black;
+    color: #fff;
+}
+
+    .power .btn-primary {
+        background-color: #171616;
+    }
+
+        .power .btn-primary:hover {
+            background-color: black;
+        }
+
+    .power .navbar {
+        background-color: #13151b;
+        border: 1px solid white;
+    }
+
+    .power .border {
+        border: 2px solid white;
+    }
+
+    .power .navbar-brand {
+        color: white;
+    }
+
+        .power .navbar-brand:hover {
+            color: #d5b8b8;
+        }
+
+
+/*Layout for Cooler page*/
+.cooler {
+    background-color: rgb(255, 253, 253);
+    color: black;
+}
+
+    .cooler .btn-primary {
+        background-color: #e6d9d9;
+        border: 1px solid black;
+        color: black;
+    }
+
+        .cooler .btn-primary:hover {
+            background-color: black;
+            color: white;
+        }
+
+    .cooler .navbar {
+        background-color: rgb(230, 230, 230);
+    }
+
+    .cooler .navbar-inverse .navbar-nav > li > a {
+        color: black;
+    }
+
+        .cooler .navbar-inverse .navbar-nav > li > a:hover {
+            color: white;
+        }
+
+    .cooler .navbar-inverse .navbar-brand {
+        color: black;
+    }
+
+        .cooler .navbar-inverse .navbar-brand:hover {
+            color: #b3a8a8;
+        }
