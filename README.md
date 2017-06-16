@@ -1,6 +1,6 @@
 # PcPartStore
 Here are all my codes, written in C#, MVC, ASP.NET and HTML for my Back End Web Development Project, PcPartStore. It is a multi database 
-Ecommerce type website. All the information that is being displayed on the screen are coming from their own Database.
+Ecommerce website. All the information that is being displayed on the screen are coming from their own Database. The 
 
 For e.g, CPU and GPU, which are navigation links on my ".net" website ,take you to their own different page, with their own custom theme,
 and so every page looks different. All the information of the products, are coming from their own, respective databases. It's a 
