@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PCpartStore.Models.NvidiaGPU>
+
+@{
+    ViewBag.Title = "NVIDIA GPUs";
+    ViewBag.BodyClass = "nvidiaLayout";
+}
+
+<h2 class="brandName">NVIDIA GEFORCE</h2>
+@{int counter = 1;}
+@foreach (var i in Model)
+{
+    if (counter == 1)
+    {
+        @Html.Raw(@"<div class=""row"">");
+    }
+
+    <div class="col-md-4">
+        <div class="border">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="@Url.Content(i.Image)"/>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        @Html.DisplayNameFor(nvidiaGPU => nvidiaGPU.Manufacturer) : @Html.DisplayFor(model => i.Manufacturer)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(nvidiaGPU => nvidiaGPU.Model) : Gtx @Html.DisplayFor(model => i.Model)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(nvidiaGPU => nvidiaGPU.Memory) = @Html.DisplayFor(model => i.Memory)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(nvidiaGPU => nvidiaGPU.Price) = @Html.DisplayFor(model => i.Price)
+                    </div>
+                    @using (Html.BeginForm("AddToShoppingCart", "NvidiaGpu", new { ID = i.Id }))
+                    {
+                        <input type="submit" class="btn btn-primary" value="Add to Cart" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (counter == 1 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 2 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 3)
+    {
+        @Html.Raw("</div>");
+        <hr />
+    }
+
+    counter++;
+
+    if (counter == 4)
+    {
+        counter = 1;
+    }
+}
+

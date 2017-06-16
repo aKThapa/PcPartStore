@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PCpartStore.Models.Cooler>
+@{
+    ViewBag.Title = "IndexCooler";
+    ViewBag.BodyClass = "cooler";
+}
+
+<h2 class="brandName">Coolers</h2>
+@{int counter = 1;}
+@foreach (var i in Model)
+{
+    if (counter == 1)
+    {
+        @Html.Raw(@"<div class=""row"">");
+    }
+
+    <div class="col-md-4">
+        <div class="border">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="@Url.Content(i.Image)" />
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        @Html.DisplayFor(model => i.Brand)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(ram => ram.Model) : @Html.DisplayFor(model => i.Model)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(ram => ram.Rad) = @Html.DisplayFor(model => i.Rad)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(ram => ram.Price) = £ @Html.DisplayFor(model => i.Price)
+                    </div>
+                    @*<a class="btn btn-success" href="#">Add to Cart</a>*@
+                    @using (Html.BeginForm("AddToShoppingCart", "Cooler", new { ID = i.Id }))
+                    {
+                        @*@Html.HiddenFor(model => i.Id)*@
+                        <input type="submit" class="btn btn-primary" value="Add to Cart" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (counter == 1 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 2 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 3)
+    {
+        @Html.Raw("</div>");
+        <hr />
+    }
+
+    counter++;
+
+    if (counter == 4)
+    {
+        counter = 1;
+    }
+}
+
+
+
+
+
+

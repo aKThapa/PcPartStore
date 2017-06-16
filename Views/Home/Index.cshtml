@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PCpartStore.Models.IntelCPU>
+
+@{
+    ViewBag.Title = "Index";
+}
+<ul class="margin-top customUL">
+    <li><a class="btn btn-danger" href="@Url.Action("Index" , "Home" )">Intel CPU</a></li>
+    <li><a class="btn btn-danger btn-danger-amd" href="@Url.Action("IndexAmdCpu" , "AmdCpu"  )">AMD CPU</a></li>
+</ul>
+<h2 class="text-center">IntelCPU</h2>
+@{int counter = 1;}
+@foreach (var i in Model)
+{
+    if (counter == 1)
+    {
+        @Html.Raw(@"<div class=""row"">");
+    }
+
+    <div class="col-md-4">
+        <div class="border">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="@Url.Content(i.Image)" />
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        @Html.DisplayNameFor(intelCPU => intelCPU.Core) :  @Html.DisplayFor(model => i.Core)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(intelCPU => intelCPU.Model) = @Html.DisplayFor(model => i.Model)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(intelCPU => intelCPU.Speed) = @Html.DisplayFor(model => i.Speed)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(intelCPU => intelCPU.Description) = @Html.DisplayFor(model => i.Description)
+                    </div>
+                    <div>
+                        @Html.DisplayNameFor(intelCPU => intelCPU.Price) = £ @Html.DisplayFor(model => i.Price)
+                    </div>
+                    @*<a class="btn btn-success" href="#">Add to Cart</a>*@
+                    @using (Html.BeginForm("AddToShoppingCart", "Home", new { ID = i.Id }))
+                    {
+                        @*@Html.HiddenFor(model => i.Id)*@
+                        <input type="submit" class="btn btn-primary" value="Add to Cart" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    if (counter == 1 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 2 && Model.LastOrDefault().Equals(i))
+    {
+        <div class="col-md-4"></div>
+        @Html.Raw("</div>");
+    }
+
+    if (counter == 3)
+    {
+        @Html.Raw("</div>");
+        <hr />
+    }
+
+    counter++;
+
+    if (counter == 4)
+    {
+        counter = 1;
+    }
+}
+
